@@ -2,6 +2,11 @@ package ru.sber.rdbms
 
 import java.sql.DriverManager
 
+fun main() {
+
+    TransferConstraint().transfer(1, 2,500)
+}
+
 class TransferConstraint {
 
         fun transfer(accountId1: Long, accountId2: Long, amount: Long) {

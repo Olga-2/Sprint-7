@@ -3,6 +3,10 @@ package ru.sber.rdbms
 import java.sql.DriverManager
 import java.sql.SQLException
 
+fun main() {
+    TransferOptimisticLock().transfer(2, 1, 500)
+}
+
 class TransferOptimisticLock {
     fun transfer(accountId1: Long, accountId2: Long, amount: Long) {
         val connection = DriverManager.getConnection(
