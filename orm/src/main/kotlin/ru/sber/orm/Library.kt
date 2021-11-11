@@ -2,6 +2,7 @@ package ru.sber.orm
 
 import org.hibernate.SessionFactory
 import org.hibernate.cfg.Configuration
+import ru.sber.orm.entity.*
 import java.time.Year
 
 
@@ -23,7 +24,6 @@ fun main() {
 
         val book1 = Book(
             title = "Lord of Ring",
-
             style = Styles.FANTASY,
             author = author1,
             detail = BookDetails(year = Year.parse("1954"),
@@ -31,9 +31,7 @@ fun main() {
 
         val book2 = Book(
             title = "The Hobbit, or There and Back Again",
-
             style = Styles.FANTASY,
-      //      author = Author(name = "John Ronald Reuel Tolkien", country = "England", gender = Gender.MAN),
             author = author1,
             detail = BookDetails(year = Year.parse("1937"),
                 bookData = BookData(heroes = "Bilbo, dwarves, Gendalf, Dragon and others", summaryOfBook = "Something about The Spiders")))
@@ -41,7 +39,6 @@ fun main() {
         val book3 = Book(
             title = "Pride and Prejudice",
             style = Styles.NOVEL,
-        //    author = Author(name = "Jane Austen", country = "England", gender = Gender.WOMAN),
             author = author2,
             detail = BookDetails(year = Year.parse("1813"),
                 bookData = BookData(heroes = "The Bennets, Bingly, Darsy and others", summaryOfBook = "The exquisite love affair")))

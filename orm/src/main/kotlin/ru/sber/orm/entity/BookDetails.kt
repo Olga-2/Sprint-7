@@ -1,15 +1,15 @@
-package ru.sber.orm
+package ru.sber.orm.entity
 
 import java.time.Year
 import javax.persistence.*
 
 @Entity
 class BookDetails (
-    @Id
+        @Id
     @GeneratedValue
     var id: Long = 0,
-    var bookData: BookData,
-    @Column(name = "year_edition")
+        var bookData: BookData,
+        @Column(name = "year_edition")
     var year: Year
 ){
     override fun toString(): String{

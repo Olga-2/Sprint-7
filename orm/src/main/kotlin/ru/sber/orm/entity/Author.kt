@@ -1,4 +1,4 @@
-package ru.sber.orm
+package ru.sber.orm.entity
 
 import javax.persistence.*
 
@@ -15,8 +15,6 @@ class Author(
 
     @Enumerated(value = EnumType.STRING)
     var gender: Gender
-
-
 
 )
 {

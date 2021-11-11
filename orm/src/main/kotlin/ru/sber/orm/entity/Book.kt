@@ -1,4 +1,4 @@
-package ru.sber.orm
+package ru.sber.orm.entity
 
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.NaturalId
@@ -27,7 +27,7 @@ class Book(
     var updateTime: LocalDateTime? = null
 ) {
     override fun toString(): String {
-        return "Book(id=$id, tytle='$title', author='$author', detail='$detail')"
+        return "Book(id=$id, title='$title', author='$author', detail='$detail')"
     }
 }
 enum class Styles{
