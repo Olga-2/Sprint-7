@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+</head>
+<body>
+    <form th:action="@{/login}" method="POST" >
+        <fieldset>
+            <h1>Please Sign In</h1>
+        <div class="form-group">
+            <input type="text" name="username" id="username"
+                   placeholder="UserName" required="true" autofocus="true"/>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="password"
+                   placeholder="Password" required="true"/>
+        </div>
+        <br/>
+        <input type="submit" value="Go!" />
+        </fieldset>
+    </form>
+
+</body>
+</html>
