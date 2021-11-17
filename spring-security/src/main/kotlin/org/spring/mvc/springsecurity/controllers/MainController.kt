@@ -1,21 +1,19 @@
-package org.spring.mvc.addressbook.controllers
+package org.spring.mvc.springsecurity.controllers
 
-import org.spring.mvc.addressbook.models.Address
-import org.spring.mvc.addressbook.models.InitialData
+import org.spring.mvc.springsecurity.models.Address
+import org.spring.mvc.springsecurity.models.InitialData
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.security.access.annotation.Secured
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import javax.servlet.http.HttpServletRequest
 
-
 @Controller
 @RequestMapping(value = ["/app"])
 class MainController (@Autowired private val initialData: InitialData){
 
-//    @Value("\${error.message}")
     private val errorMessage: String = "Name and address can't be  empty"
-
     @RequestMapping(value = ["/list"], method = [RequestMethod.GET, RequestMethod.POST])
     fun getAddressList(model: Model, @RequestParam fullName : String?, request: HttpServletRequest): String {
         if  (request.method.equals(RequestMethod.POST.name, true))

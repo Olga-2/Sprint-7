@@ -1,4 +1,4 @@
-package org.spring.mvc.addressbook.models
+package org.spring.mvc.springsecurity.models
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component

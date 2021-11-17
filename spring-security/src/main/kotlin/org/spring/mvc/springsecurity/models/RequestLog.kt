@@ -1,4 +1,4 @@
-package org.spring.mvc.addressbook.models
+package org.spring.mvc.springsecurity.models
 
 data class RequestLog(val login: String, val request: String){
 }

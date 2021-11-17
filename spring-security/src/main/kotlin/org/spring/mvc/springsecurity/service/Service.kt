@@ -1,22 +1,14 @@
-package org.spring.mvc.addressbook.service
+package org.spring.mvc.springsecurity.service
 
-import org.spring.mvc.addressbook.models.Address
-import org.spring.mvc.addressbook.models.Addresses
-import org.spring.mvc.addressbook.models.User
-import org.spring.mvc.addressbook.models.Users
+import org.spring.mvc.springsecurity.models.Address
+import org.spring.mvc.springsecurity.models.Addresses
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
 class Service {
-
-    @Autowired
-    private lateinit var users: Users
-
     @Autowired
     private lateinit var addresses: Addresses
-
-    fun getLogin (user: User) = users.geLoginUsers().find { it.login.equals(user.login, true) && it.password.equals(user.password) }
 
     fun getList () = addresses.getListAddresses()
 

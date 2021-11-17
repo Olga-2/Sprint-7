@@ -1,10 +1,11 @@
-package org.spring.mvc.addressbook.controllers
+package org.spring.mvc.springsecurity.controllers
 
-import org.spring.mvc.addressbook.models.*
-import org.spring.mvc.addressbook.service.Service
+import org.spring.mvc.springsecurity.models.*
+import org.spring.mvc.springsecurity.service.Service
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.security.access.annotation.Secured
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.bind.annotation.RestController
 
@@ -54,6 +55,7 @@ class RestController(@Autowired private val initialData: InitialData,
         }
     }
     @DeleteMapping(value = ["/{id}/delete"])
+    @Secured("APP")
     fun deleteAddress(@PathVariable id: Int): ResponseEntity<Any> {
         try {
             service.deleteAddress(id)

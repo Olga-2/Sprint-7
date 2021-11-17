@@ -12,7 +12,7 @@
 
     <!-- context:component-scan This tag will scan @Component, @Repository, @Service, @Controller
          and also resolves @Autowired and @Qualifier -->
-    <context:component-scan base-package="org.spring.mvc.addressbook" />
+    <context:component-scan base-package="org.spring.mvc.springsecurity" />
     <mvc:annotation-driven />
 
 
