@@ -7,9 +7,6 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.bind.annotation.RestController
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import javax.servlet.http.Cookie
 
 
 @RestController
@@ -18,12 +15,12 @@ class RestController(@Autowired private val initialData: InitialData,
     @Autowired private var service: Service)
 {
     @GetMapping(value = ["/list"])
-    fun getAddressList(@CookieValue("auth") cookie: Cookie): ResponseEntity<Any> {
+    fun getAddressList(): ResponseEntity<Any> {
         return ResponseEntity.status(HttpStatus.OK).body(service.getList())
      }
 
     @GetMapping(value = ["/list/{fio}"])
-    fun getFindAddressByFio(@CookieValue("auth") cookie: Cookie, @PathVariable fio : String): ResponseEntity<Any> {
+    fun getFindAddressByFio(@PathVariable fio : String): ResponseEntity<Any> {
         var address = service.getAddressByFio(fio)
         if (address != null)
             return ResponseEntity.status(HttpStatus.OK).body(service.getAddressByFio(fio))
@@ -32,7 +29,7 @@ class RestController(@Autowired private val initialData: InitialData,
     }
 
     @PutMapping(value = ["/add"])
-    fun addAddress(@CookieValue("auth") cookie: Cookie, @RequestBody address: Address): ResponseEntity<Any> {
+    fun addAddress(@RequestBody address: Address): ResponseEntity<Any> {
         try {
             service.addAddress(address)
             return ResponseEntity.status(HttpStatus.OK).body(Message("Address added"))
@@ -43,7 +40,7 @@ class RestController(@Autowired private val initialData: InitialData,
         }
     }
     @GetMapping(value = ["/{id}/view"])
-    fun getAddress(@CookieValue("auth") cookie: Cookie, @PathVariable id: Int): ResponseEntity<Any> {
+    fun getAddress(@PathVariable id: Int): ResponseEntity<Any> {
 
         try {
             var address = service.getAddressById(id)
@@ -57,7 +54,7 @@ class RestController(@Autowired private val initialData: InitialData,
         }
     }
     @DeleteMapping(value = ["/{id}/delete"])
-    fun deleteAddress(@CookieValue("auth") cookie: Cookie, @PathVariable id: Int): ResponseEntity<Any> {
+    fun deleteAddress(@PathVariable id: Int): ResponseEntity<Any> {
         try {
             service.deleteAddress(id)
             return ResponseEntity.status(HttpStatus.OK).body(Message("Address removed"))
@@ -68,7 +65,7 @@ class RestController(@Autowired private val initialData: InitialData,
     }
 
     @PutMapping(value = ["/{id}/edit"])
-    fun editAddress(@CookieValue("auth") cookie: Cookie, @PathVariable id: Int, @RequestBody address: Address): ResponseEntity<Any> {
+    fun editAddress(@PathVariable id: Int, @RequestBody address: Address): ResponseEntity<Any> {
         var address = service.editAddress(id, address)
         try {
             if (address != null)

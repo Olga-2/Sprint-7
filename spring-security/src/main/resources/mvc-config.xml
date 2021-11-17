@@ -14,15 +14,6 @@
          and also resolves @Autowired and @Qualifier -->
     <context:component-scan base-package="org.spring.mvc.addressbook" />
     <mvc:annotation-driven />
-    <!-- ViewResolver bean config for mapping strings to jsp views -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/view/" />
-        <property name="suffix" value=".html" />
-    </bean>
-
-
-<!--    <mvc:view-controller path="/authView.html" view-name="/authView"/>-->
-<!--    <mvc:view-controller path="/index.html" view-name="/index"/>-->
 
 
 </beans>

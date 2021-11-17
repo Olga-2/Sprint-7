@@ -1,31 +1,15 @@
-package org.spring.mvc.addressbook
+package org.spring.mvc.springsecurity
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import net.minidev.json.JSONObject
-import org.hamcrest.CoreMatchers.containsString
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.jupiter.api.Test
-import org.spring.mvc.addressbook.models.Address
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.boot.web.server.LocalServerPort
-import org.springframework.http.*
-import org.springframework.mock.http.client.MockClientHttpRequest
-import org.springframework.mock.web.MockHttpServletRequest
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
-import org.springframework.web.client.RestTemplate
-import org.springframework.web.util.UriBuilder
-import org.springframework.web.util.UriComponentsBuilder
-import java.net.URI
-
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class AddressbooksecurityApplicationTests {
+class SpringSecurityApplicationTests {
 
 	@Autowired
 	private lateinit var mockMvc: MockMvc
